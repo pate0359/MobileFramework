@@ -9,7 +9,7 @@ var pageTime = 800; //same as CSS transition
 var pageshow = document.createEvent("CustomEvent");
 pageshow.initEvent("pageShow", false, true);
 
-document.addEventListener("DOMContentLoaded", function () { //deviceready,DOMContentLoaded
+document.addEventListener("deviceready", function () { //deviceready,DOMContentLoaded
 	//device ready listener
 	document.addEventListener("scroll", handleScrolling, false);
 

@@ -25,12 +25,13 @@ document.addEventListener("DOMContentLoaded", function () { //deviceready,DOMCon
 		pages[p].addEventListener("pageShow", handlePageShow, false);
 	}
 	loadPage(null);
-
-	//	var a = document.getElementById("svg-hp");
-	//var b=a.contentDocument;
-	//	var contact=$(b).find("#Capa_1");
-	//	contact.attr("fill", "red");
-
+	
+	//for default selection
+	var svgEmbed = document.querySelector("#homeSVG");
+	svgEmbed.addEventListener("load", function(){
+		selecteTab("home");
+	});
+	
 });
 
 function handleNav(ev) {
@@ -50,7 +51,8 @@ function loadPage(url) {
 	if (url == null) {
 		//home page first call
 		pages[0].className = 'active';
-		history.replaceState(null, null, "#home");
+		history.replaceState(null, null, "#home");		
+		
 	} else {
 		for (var i = 0; i < numPages; i++) {
 			pages[i].className = "hidden";
@@ -71,15 +73,11 @@ function loadPage(url) {
 			}
 		}
 		
-		if(url == "location")
-		{
-			getLocation();
-			
-		}else if(url == "contacts")
-		{
-			getContacts();
-		}
+		//Change selection
+		selecteTab(url);
 	}
+	
+	
 }
 
 function addDispatch(num) {
@@ -98,4 +96,73 @@ function handleScrolling(ev) {
 	footer.style.position = "absolute";
 	var total = height + offset - footHeight;
 	footer.style.top = total + "px";
+}
+
+//For tab change selection
+function selecteTab(tabName) {
+	if (tabName == "home") {
+		//Home tab
+		var a = document.getElementById("homeSVG");
+		var b = a.contentDocument;
+		var contact = b.querySelector("#Capa_home");
+		contact.setAttribute("fill", "#3498db");
+
+		//Location Tab
+		var a1 = document.getElementById("locationSVG");
+		var b1 = a1.contentDocument;
+		var contact1 = b1.querySelector("#Capa_location");
+		contact1.setAttribute("fill", "black");
+
+		//ContactTab
+		var a2 = document.getElementById("contactsSVG");
+		var b2 = a2.contentDocument;
+		var contact2 = b2.querySelector("#Capa_contact");
+		contact2.setAttribute("fill", "black");
+
+	} else if (tabName == "location") {
+		
+		//Home tab
+		var a = document.getElementById("homeSVG");
+		var b = a.contentDocument;
+		var contact = b.querySelector("#Capa_home");
+		contact.setAttribute("fill", "black");
+
+		//Location Tab
+		var a1 = document.getElementById("locationSVG");
+		var b1 = a1.contentDocument;
+		var contact1 = b1.querySelector("#Capa_location");
+		contact1.setAttribute("fill", "#3498db");
+
+		//ContactTab
+		var a2 = document.getElementById("contactsSVG");
+		var b2 = a2.contentDocument;
+		var contact2 = b2.querySelector("#Capa_contact");
+		contact2.setAttribute("fill", "black");
+		
+		//Get location
+		getLocation();
+		
+	} else if (tabName == "contacts") {
+		
+		//Home tab
+		var a = document.getElementById("homeSVG");
+		var b = a.contentDocument;
+		var contact = b.querySelector("#Capa_home");
+		contact.setAttribute("fill", "black");
+
+		//Location Tab
+		var a1 = document.getElementById("locationSVG");
+		var b1 = a1.contentDocument;
+		var contact1 = b1.querySelector("#Capa_location");
+		contact1.setAttribute("fill", "black");
+
+		//ContactTab
+		var a2 = document.getElementById("contactsSVG");
+		var b2 = a2.contentDocument;
+		var contact2 = b2.querySelector("#Capa_contact");
+		contact2.setAttribute("fill", "#3498db");
+		
+		//Get contacts
+		getContacts();
+	}
 }

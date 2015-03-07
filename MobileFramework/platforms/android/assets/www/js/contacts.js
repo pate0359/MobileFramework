@@ -11,11 +11,16 @@ function onSuccess(contacts) {
 	alert(contacts.length);
 	for (var i = 0; i < contacts.length; i++) {
 		console.log("Display Name = " + contacts[i].displayName);
-		alert(contacts[i].displayName);
+		
+		var li = document.createElement("li");
+		li.innerHTML=contacts[i].displayName;
+		
+		document.querySelector("#MyContacts").appendChild(li);;
+//		alert(contacts[i].displayName);
 	}
 }
 
 // onError: Failed to get the contacts
 function onError(contactError) {
-	alert('onError!');
+	alert('Error while fetching contact!');
 }
