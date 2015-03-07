@@ -27,11 +27,12 @@ document.addEventListener("DOMContentLoaded", function () { //deviceready,DOMCon
 	loadPage(null);
 	
 	//for default selection
-	var svgEmbed = document.querySelector("#homeSVG");
-	svgEmbed.addEventListener("load", function(){
-		selecteTab("home");
-	});
+	selecteTab("home");
 	
+//	var svgEmbed = document.querySelector("#homeSVG");
+//	svgEmbed.addEventListener("load", function(){
+//		selecteTab("home");
+//	});
 });
 
 function handleNav(ev) {
@@ -72,12 +73,9 @@ function loadPage(url) {
 				links[t].className = "activetab";
 			}
 		}
-		
 		//Change selection
 		selecteTab(url);
 	}
-	
-	
 }
 
 function addDispatch(num) {
