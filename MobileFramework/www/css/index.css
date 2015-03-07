@@ -36,7 +36,20 @@ body{
 nav{
   height:3rem;
   width:100%;
+	
+	 position: fixed;  
+    width: 100%;  
+    left: 0;  
+    top: 0;  
+    z-index: 100;  
+    border-top: 2; 
+	border-bottom: 2;
+/*
+	border-bottom-color: white;
+	box-shadow: inset 0 -12px 12px 12px rgba(0,0,0,1);
+*/
 }
+
 ul.tabs{
 	width:100%;
 	/*margin-bottom:30px;*/
@@ -58,15 +71,21 @@ ul.tabs{
 	height: 2rem;
 	color: #fff;
 	text-decoration: none;
-	border: none;
+/*	border: none;*/
+	border-left:1px solid #666;
 	background-color: #555;
 	text-align: center;
+	border-bottom: 5px;
+/*
+	border-color: red;
+	box-shadow: inset 1 12px 12px 12px rgba(0,0,0,1);
+*/
 	
 }
 .tabs li.tab a.activetab{
   background-color:#333;
   color: #0cf;
-	border-top:1px solid #666;
+	border-bottom:1px solid #666;
 	border-right:1px solid #222;
 	border-left:1px solid #666;
   /* 
@@ -172,7 +191,7 @@ object
 #err_dialog {
 	position: absolute;
 	z-index: 9999;
-	top: 0;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	background: #3498db;
@@ -197,32 +216,37 @@ object
 	width: 100%;
 }
 
-.mapDiv {
-
+#MyContacts
+{
+	list-style-type: none;
 }
 
-.navBar
+#MyContacts li
 {
-	 position: fixed;  
-    width: 100%;  
-    left: 0;  
-    top: 0;  
-    z-index: 100;  
-    border-top: 0;  
-	
-	border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,1);
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	vertical-align: middle;
+}
+#MyContacts li:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: screen.width;
+    margin: 10px;
+    background: white;
 }
 
-li
-{
-	height: 30px;
-}
-.divider
-{
+
+
+
+.divider{
 /*
-	height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+    position:absolute;
+    left:50%;
+    top:10%;
+    bottom:10%;
+    border-left:1px solid white;
 */
 }

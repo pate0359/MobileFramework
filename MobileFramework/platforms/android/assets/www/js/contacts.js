@@ -1,4 +1,5 @@
 function getContacts() {
+//	alert("contact");
 	var options = new ContactFindOptions();
 //	options.filter = "";
 //	var fields = ["displayName", "name"];
@@ -8,7 +9,9 @@ function getContacts() {
 }
 
 function onSuccess(contacts) {
-	alert(contacts.length);
+//	alert(contacts.length);
+	
+	document.querySelector("#MyContacts").innerHTML="";
 	for (var i = 0; i < contacts.length; i++) {
 		console.log("Display Name = " + contacts[i].displayName);
 		

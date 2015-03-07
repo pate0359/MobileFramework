@@ -4,12 +4,13 @@ var pages = [],
 var numLinks = 0;
 var numPages = 0;
 var pageTime = 800; //same as CSS transition
+var preTabUrl;
 
 //create the pageShow type event.
 var pageshow = document.createEvent("CustomEvent");
 pageshow.initEvent("pageShow", false, true);
 
-document.addEventListener("DOMContentLoaded", function () { //deviceready,DOMContentLoaded
+document.addEventListener("deviceready", function () { //deviceready,DOMContentLoaded
 	//device ready listener
 	document.addEventListener("scroll", handleScrolling, false);
 
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () { //deviceready,DOMCon
 	loadPage(null);
 	
 	//for default selection
+	preTabUrl="home";
 	selecteTab("home");
 	
 //	var svgEmbed = document.querySelector("#homeSVG");
@@ -73,8 +75,14 @@ function loadPage(url) {
 				links[t].className = "activetab";
 			}
 		}
-		//Change selection
-		selecteTab(url);
+		
+		//If same tab clicked, do nothing
+		if(preTabUrl != url)
+		{
+			//Change selection
+			selecteTab(url);
+			preTabUrl=url;
+		}
 	}
 }
 
