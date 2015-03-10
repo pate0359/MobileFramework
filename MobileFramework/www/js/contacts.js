@@ -13,13 +13,13 @@ function onSuccess(contacts) {
 	
 	document.querySelector("#MyContacts").innerHTML="";
 	for (var i = 0; i < contacts.length; i++) {
-		console.log("Display Name = " + contacts[i].displayName);
 		
-		var li = document.createElement("li");
-		li.innerHTML=contacts[i].displayName;
-		
-		document.querySelector("#MyContacts").appendChild(li);;
-//		alert(contacts[i].displayName);
+		if(contacts[i].displayName)
+		{
+			var li = document.createElement("li");
+			li.innerHTML=contacts[i].displayName;
+			document.querySelector("#MyContacts").appendChild(li);
+		}
 	}
 }
 

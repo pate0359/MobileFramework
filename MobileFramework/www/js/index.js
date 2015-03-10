@@ -35,6 +35,15 @@ document.addEventListener("deviceready", function () { //deviceready,DOMContentL
 //	svgEmbed.addEventListener("load", function(){
 //		selecteTab("home");
 //	});
+	
+	//hammer js
+//	var myElement = document.getElementById('first');
+//	var hammer    = new Hammer.Manager(myElement);
+//	var swipe     = new Hammer.Swipe();
+//	hammer.add(swipe);
+//	hammer.on('swipeleft', function(){
+//	window.location = '#/food-truck';
+//});
 });
 
 function handleNav(ev) {
@@ -111,7 +120,7 @@ function selecteTab(tabName) {
 		var a = document.getElementById("homeSVG");
 		var b = a.contentDocument;
 		var contact = b.querySelector("#Capa_home");
-		contact.setAttribute("fill", "#3498db");
+		contact.setAttribute("fill", "#009FD4"); //009FD4,3498db
 
 		//Location Tab
 		var a1 = document.getElementById("locationSVG");
@@ -137,7 +146,7 @@ function selecteTab(tabName) {
 		var a1 = document.getElementById("locationSVG");
 		var b1 = a1.contentDocument;
 		var contact1 = b1.querySelector("#Capa_location");
-		contact1.setAttribute("fill", "#3498db");
+		contact1.setAttribute("fill", "#009FD4");
 
 		//ContactTab
 		var a2 = document.getElementById("contactsSVG");
@@ -166,7 +175,7 @@ function selecteTab(tabName) {
 		var a2 = document.getElementById("contactsSVG");
 		var b2 = a2.contentDocument;
 		var contact2 = b2.querySelector("#Capa_contact");
-		contact2.setAttribute("fill", "#3498db");
+		contact2.setAttribute("fill", "#009FD4");
 		
 		//Get contacts
 		getContacts();

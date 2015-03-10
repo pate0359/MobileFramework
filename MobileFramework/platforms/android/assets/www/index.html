@@ -7,7 +7,8 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-		<link href='http://fonts.googleapis.com/css?family=Karla|Merriweather+Sans:400,300' rel='stylesheet' type='text/css'>
+<!--		<link href='http://fonts.googleapis.com/css?family=Karla|Merriweather+Sans:400,300' rel='stylesheet' type='text/css'>-->
+		<link href='http://fonts.googleapis.com/css?family=Mate|Flamenco' rel='stylesheet' type='text/css'>
         
 		<title>Cordova Mobile</title>
     </head>
@@ -28,12 +29,17 @@
 <!--		</div>-->
 <div data-role="page" id="home" class="">
   <div data-role="content">      
-    <h3>Home</h3>
-    <p>Some content on the home page.</p>
-    <p>Some content on the home page.</p>
-    <p>Some content on the home page.</p>
-    <p>Some content on the home page.</p>
-    <p>Some content on the home page.</p>
+    <h2>Welcome!</h2>
+    <p>This is the sample cordova application with two basic functionality GEOLOCATION API and CONTACT API.</p>
+	  <br>
+	  <h4>Geolocation API</h4>
+	  <p>Application will fetch user's current location, and will get the static map image using google static map API.It uses canvas to display image. Current location marker will be displayed on static map image. Make sure you allow permission to access your location, when application ask you, or application can not get your location neither static map image.</p>
+		 
+	  <h4>Contact API</h4>
+	  <p>Application will get user's phone contacts using Contact API and display as a list. Make sure you allow permission to access your contacts information, when application ask you, or application can not get your contacts list.</p>
+	  
+	  <br><br>
+	  <p>The 300ms delay for touch events is eliminited in the application. Tab icon contactins SVG images. Application is using google fonts and monochromatic  color scheme.</p>
   </div>
 </div>
     
