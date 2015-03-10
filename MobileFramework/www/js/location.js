@@ -48,7 +48,7 @@ function getLocation() {
 
 	//Error while getting location
 	function error(err) {
-		alert('ERROR(' + err.code + '): ' + err.message);
+		//alert('ERROR(' + err.code + '): ' + err.message);
 		document.querySelector("#locating").innerHTML = "";
 		errorDiv = document.querySelector("#err_dialog");
 		if (!errorDiv) {
@@ -57,7 +57,7 @@ function getLocation() {
 			document.body.appendChild(errorDiv);
 		}
 		errorDiv.style.display = 'block';
-		errorDiv.innerHTML = "Unable to retrieve your location.";
+		errorDiv.innerHTML = "Unable to retrieve your location. Error code : "+err.code;
 
 		//set timeout for error msg
 		setTimeout(function () {

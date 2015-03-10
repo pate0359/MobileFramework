@@ -1,9 +1,6 @@
 var errorDiv;
 function getLocation() {
 
-	//Create container div
-//	 output = document.querySelector(".mapDiv");
-
 	//if browser does not support geolocation API
 	if (!navigator.geolocation) {
 		//Error message pop up
@@ -25,7 +22,7 @@ function getLocation() {
 
 	//got the location
 	function success(position) {
-		alert("sucess");
+		//alert("sucess");
 		var latitude = position.coords.latitude;
 		var longitude = position.coords.longitude;
 		document.querySelector("#locating").innerHTML = "";
@@ -34,17 +31,11 @@ function getLocation() {
 		canvas = document.querySelector(".canvas");
 		if (!canvas) {
 			canvas = document.createElement("canvas");
-			canvas.setAttribute("class", "canvas");
-			//			canvas.style="width: 400px";
-//			 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-			
+			canvas.setAttribute("class", "canvas");			
 			canvas.width="400";
 			canvas.height="400";
 			document.querySelector('.mapDiv').appendChild(canvas);
 		}
-
-//		canvas.style.width = "500px";
-//		canvas.style.height = "500px";
 		var ctx = canvas.getContext('2d');
 		var img = new Image();
 		img.onload = function () {
@@ -57,7 +48,7 @@ function getLocation() {
 
 	//Error while getting location
 	function error(err) {
-		alert('ERROR(' + err.code + '): ' + err.message);
+		//alert('ERROR(' + err.code + '): ' + err.message);
 		document.querySelector("#locating").innerHTML = "";
 		errorDiv = document.querySelector("#err_dialog");
 		if (!errorDiv) {
@@ -66,7 +57,7 @@ function getLocation() {
 			document.body.appendChild(errorDiv);
 		}
 		errorDiv.style.display = 'block';
-		errorDiv.innerHTML = "Unable to retrieve your location.";
+		errorDiv.innerHTML = "Unable to retrieve your location. Error code : "+err.code;
 
 		//set timeout for error msg
 		setTimeout(function () {

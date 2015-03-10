@@ -10,7 +10,7 @@ var preTabUrl;
 var pageshow = document.createEvent("CustomEvent");
 pageshow.initEvent("pageShow", false, true);
 
-document.addEventListener("deviceready", function () { //deviceready,DOMContentLoaded
+document.addEventListener("DOMContentLoaded", function () { //deviceready,DOMContentLoaded
 	//device ready listener
 	document.addEventListener("scroll", handleScrolling, false);
 
@@ -36,14 +36,6 @@ document.addEventListener("deviceready", function () { //deviceready,DOMContentL
 //		selecteTab("home");
 //	});
 	
-	//hammer js
-//	var myElement = document.getElementById('first');
-//	var hammer    = new Hammer.Manager(myElement);
-//	var swipe     = new Hammer.Swipe();
-//	hammer.add(swipe);
-//	hammer.on('swipeleft', function(){
-//	window.location = '#/food-truck';
-//});
 });
 
 function handleNav(ev) {
@@ -180,4 +172,26 @@ function selecteTab(tabName) {
 		//Get contacts
 		getContacts();
 	}
+}
+
+//handle 300ms delay
+function touchHandler(ev){
+  //this function will run when the touch events happen
+  if( ev.type == "touchend"){
+    ev.preventDefault();
+    var touch = evt.changedTouches[0];        //this is the first object touched
+    
+    var newEvt = document.createEvent("MouseEvent");	//old method works across browsers, though it is deprecated.
+    /**
+    event.initMouseEvent(type, canBubble, cancelable, view,
+                     detail, screenX, screenY, clientX, clientY,
+                     ctrlKey, altKey, shiftKey, metaKey,
+                     button, relatedTarget); **/
+    newEvt.initMouseEvent("click", true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY);
+    //var newEvt = new MouseEvent("click");				//new method
+    //REF: https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent.MouseEvent
+    ev.currentTarget.dispatchEvent(newEvt);
+    //change the touchend event into a click event and dispatch it immediately
+    //this will skip the built-in 300ms delay before the click is fired by the browser
+  }
 }

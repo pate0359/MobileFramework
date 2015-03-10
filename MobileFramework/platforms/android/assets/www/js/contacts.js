@@ -20,9 +20,6 @@ function onSuccess(contacts) {
 			li.innerHTML=contacts[i].displayName;
 			document.querySelector("#MyContacts").appendChild(li);
 		}
-		
-//		console.log("Display Name = " + contacts[i].displayName);		
-//		alert(contacts[i].displayName);
 	}
 }
 
