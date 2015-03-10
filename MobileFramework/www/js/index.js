@@ -28,13 +28,14 @@ document.addEventListener("DOMContentLoaded", function () { //deviceready,DOMCon
 	loadPage(null);
 	
 	//for default selection
-	preTabUrl="home";
-	selecteTab("home");
+//	preTabUrl="home";
+//	selecteTab("home");
 	
-//	var svgEmbed = document.querySelector("#homeSVG");
-//	svgEmbed.addEventListener("load", function(){
-//		selecteTab("home");
-//	});
+	var svgEmbed = document.querySelector("#homeSVG");
+	svgEmbed.addEventListener("load", function(){
+		preTabUrl="home";
+		selecteTab("home");
+	});
 	
 });
 

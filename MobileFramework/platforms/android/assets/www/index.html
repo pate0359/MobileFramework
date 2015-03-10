@@ -36,14 +36,16 @@
 	  <h4>Contact API</h4>
 	  <p>Application will get user's phone contacts using Contact API and display as a list. Make sure you allow permission to access your contacts information, when application ask you, or application can not get your contacts list.</p>
 	  
+<!--
 	  <br><br>
 	  <p>The 300ms delay for touch events is eliminited in the application. Tab icon contactins SVG images. Application is using google fonts and monochromatic  color scheme.</p>
+-->
   </div>
 </div>
     
 <div data-role="page" id="location" class="hidden">
   <div data-role="content">
-    <h3>Location</h3>
+    <h3>My Location</h3>
     <p id="locating">Geting you location...</p>
 	  <div class="mapDiv"></div>
   </div>
@@ -52,6 +54,7 @@
 <div data-role="page" id="contacts" class="hidden">
   <div data-role="content">
 <!--    <h3>Contacts</h3>-->
+	  <p id="contactLoading">Syncing your contacts...</p>
     <ul id="MyContacts">
     </ul>
   </div>

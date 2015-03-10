@@ -28,22 +28,15 @@ document.addEventListener("DOMContentLoaded", function () { //deviceready,DOMCon
 	loadPage(null);
 	
 	//for default selection
-	preTabUrl="home";
-	selecteTab("home");
+//	preTabUrl="home";
+//	selecteTab("home");
 	
-//	var svgEmbed = document.querySelector("#homeSVG");
-//	svgEmbed.addEventListener("load", function(){
-//		selecteTab("home");
-//	});
+	var svgEmbed = document.querySelector("#homeSVG");
+	svgEmbed.addEventListener("load", function(){
+		preTabUrl="home";
+		selecteTab("home");
+	});
 	
-	//hammer js
-//	var myElement = document.getElementById('first');
-//	var hammer    = new Hammer.Manager(myElement);
-//	var swipe     = new Hammer.Swipe();
-//	hammer.add(swipe);
-//	hammer.on('swipeleft', function(){
-//	window.location = '#/food-truck';
-//});
 });
 
 function handleNav(ev) {

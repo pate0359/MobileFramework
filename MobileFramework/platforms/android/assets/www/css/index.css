@@ -154,19 +154,6 @@ ul.tabs{
   display:none;
 }
 
-span
-{
-/*
-	padding-bottom: 1rem;
-	top: 0;
-*/
-/*
-	float: bottom;
-	width: 100%;
-	display: inline-block"
-*/
-}
-
 object
 {
 	pointer-events: none;
@@ -221,11 +208,9 @@ object
 }
 
 /*MAP div*/
-
-#location
+.mapDiv
 {
-/*	height: 80%;*/
-	
+	border: 2px solid #009FD4;
 }
 .canvas
 {
@@ -234,6 +219,7 @@ object
 	border-color: #666;
 }
 
+/*Contacts*/
 #MyContacts
 {
 	list-style-type: none;
@@ -254,19 +240,4 @@ object
     width: screen.width;
     margin: 10px;
     background: #666;
-}
-
-.mapDiv
-{
-	border: 2px solid #009FD4;
-}
-
-.divider{
-/*
-    position:absolute;
-    left:50%;
-    top:10%;
-    bottom:10%;
-    border-left:1px solid white;
-*/
 }
